@@ -1,0 +1,33 @@
+{% extends 'hustlerApp/index.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<div class="row readmore">
+    <center>
+        
+        <div class="card ">
+            <div class="card-body">
+                <h4><strong>{{news.Title}}</strong></h4>
+                <hr>
+                <img src="{{news.Image.url}}" alt="Good News- Exlusive">
+                <p><strong>Place: </strong>{{news.Place}} &emsp; 
+                    <strong>Date: </strong>{{news.Date_created}} &emsp; 
+                    <strong>Tag : </strong>{{news.Tag}} &emsp;
+                    <strong>Total views : </strong>{{views}} &emsp;
+                </p>
+                <hr>
+                <p>{{news.Description}}</p>
+                <br>
+                <a href="{% url 'likeNews' news.id %}" style="float:left;" class="btn btn-sm btn-outline-info">Inspired</a>
+                <span style="float:left"><strong>&emsp;{{likes}} inspired</strong></span>
+                <a href="{% url 'disLikeNews' news.id %}" style="float: right;" class="btn btn-sm btn-outline-danger">Report</a>
+            </div>
+        </div>
+            
+        
+    </center>
+        
+<br>
+{% endblock %}

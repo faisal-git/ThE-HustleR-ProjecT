@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ThE-HustleR-ThinG</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <p>&emsp;&emsp;</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="#">Home&emsp; </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'news' %}">News &emsp;</a>
+          </li>
+          
+        </ul>
+        
+        
+      </div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <p style="color:cornsilk;">Hello <b>{{request.user}}</b></p>
+          </li>
+          {% if request.user.is_authenticated %}
+            <li class="nav-item nav-right">
+              <a href="{% url 'logoutPage' %}" class='btn btn-sm btn-outline-warning'>Logout</a>   
+            </li>
+          {% else %}
+            <li class="nav-item nav-right">
+              <a href="{% url 'userLogin' %}" class='btn btn-sm btn-outline-info'>Login</a>   
+            </li>
+          {% endif %}
+
+      </ul>
+    </div>
+  </nav>

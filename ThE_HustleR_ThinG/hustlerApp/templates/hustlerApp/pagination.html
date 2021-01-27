@@ -1,0 +1,17 @@
+<center>
+    {% if page.has_previous %}
+        <a href="?page=1" class="btn btn-sm btn-outline-info">First</a>
+        <a href="?page={{page.number|add:'-1'}}" class="btn btn-sm btn-outline-info">Previous</a>
+    {% endif %}
+    {% for page_num in paginator.page_range %}
+        {% if page_num == page.number %}
+            <a href="" class="btn btn-sm btn-info">{{page.number}}</a>
+        {% elif page_num > page.number|add:'-3' and page_num < page.number|add:'3' %}
+            <a href="?page={{page_num}}" class="btn btn-sm btn-outline-info">{{page_num}}</a>
+        {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+        <a href="?page={{page_num|add:'1'}}" class="btn btn-sm btn-outline-info">Next</a>
+        <a href="?page={{paginator.num_pages}}" class="btn btn-sm btn-outline-info">Last</a>
+    {% endif %}
+</center>

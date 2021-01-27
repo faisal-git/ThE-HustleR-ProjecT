@@ -1,0 +1,19 @@
+body {
+    background: rgb(0, 0, 0);
+  
+    background: linear-gradient(90deg, rgba(171,239,237,1) 1%, rgba(209,244,237,1) 17%, rgba(209,244,237,1) 83%, rgba(171,239,237,1) 100%);
+   
+
+
+
+}
+.readmore{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.content{
+    margin-left:5%;
+    margin-right:5%;
+
+}
